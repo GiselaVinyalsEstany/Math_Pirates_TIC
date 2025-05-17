@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./reto4_style.css" />
+  <title>Reto 4</title>
+  <script>
+    // Función para validar la respuesta
+    function validarRespuesta(event) {
+      event.preventDefault(); // Prevenir el envío del formulario
+
+      // Obtener la respuesta del usuario y convertirla a minúsculas
+      const respuesta = document.getElementById('respuesta').value.toLowerCase().trim();
+
+      // Respuestas correctas posibles
+      const correct_answers = [
+        'la rana',
+        'rana',
+        'una rana',
+        'la cabeza de la rana',
+        'la cabeza de una rana'
+      ];
+
+      // Verificamos si la respuesta está en las respuestas correctas
+      const mensajeElement = document.getElementById('mensaje');
+      if (correct_answers.includes(respuesta)) {
+        mensajeElement.innerText = '¡Correcto! 🎉';
+        mensajeElement.style.color = 'green';
+      } else {
+        mensajeElement.innerText = '¡Inténtalo de nuevo!';
+        mensajeElement.style.color = 'red';
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+        <img src="../img/canva_design1.png" alt="Logo Aventuras Matemáticas" class="logo">
+        <a href="../index.html" class="home-button">🏠 Inicio</a>
+        <a href="../mapa.html" class="mapa-button"> MAPA </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Enunciado del reto -->
+    <section class="reto-enunciado">
+      <br>
+      <h1><em><u>Reto 4:</u></em></h1>
+      <br>
+      <h2>
+          ¡OH NO! Durante nuestra aventura, nos hemos encontrado con lo que parecía una <strong>¡batalla!</strong>. <br><br>
+          Menos mal, que su majestad el rey nos ha aclarado que es una obra de teatro y que estaban todos súper contentos. <br><br>
+          El rey, pero estaba muy preocupado, porque ha perdido su corona, nos ha dado una foto y porfavor que le ayudemos a encontrarla. 
+      </h2>
+      <img src="../img/coronaa.png" alt="Corona del rei" class="corona_rei">
+      <a href="../img/puzzle.jpg" target="_blank" rel="noopener noreferrer" class="boton-corona">ENCUENTRA LA CORONA</a>
+    </section>
+
+    <!-- Formulario de respuesta -->
+    <section class="reto-respuesta">
+      <h2>Respuesta</h2>
+      <form onsubmit="validarRespuesta(event)">
+        <p>La corona reposa encima de...</p>
+        <input type="text" id="respuesta" required />
+        <button type="submit">Comprobar</button>
+      </form>
+      <p id="mensaje"></p> <!-- Mensaje de validación -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Gisela Vinyals Estany, TIC. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

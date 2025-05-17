@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./reto2_style.css" />
+  <title>Reto 2</title>
+  <script>
+    // Función para validar la respuesta
+    function validarRespuesta(event) {
+      // Prevenir que el formulario se envíe de forma predeterminada
+      event.preventDefault();
+
+      // Obtener la respuesta del usuario
+      const respuesta = parseInt(document.getElementById('respuesta').value);
+
+      // Respuesta correcta
+      const respuestaCorrecta = 8;
+
+      // Mostrar mensaje según la respuesta
+      const mensajeElement = document.getElementById('mensaje');
+      if (respuesta === respuestaCorrecta) {
+        mensajeElement.innerText = '¡Correcto! 🎉';
+        mensajeElement.style.color = 'green';
+      } else {
+        mensajeElement.innerText = '¡Intenta de nuevo! Revisa el patrón de las maderas. ';
+        mensajeElement.style.color = 'red';
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-content">
+        <img src="../img/canva_design1.png" alt="Logo Aventuras Matemáticas" class="logo">
+        <a href="../index.html" class="home-button">🏠 Inicio</a>
+        <a href="../mapa.html" class="mapa-button"> MAPA </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Enunciado del reto -->
+    <section class="reto-enunciado">
+      <br>
+      <h1><em><u>Reto 2:</u></em></h1>
+      <br>
+      <br>
+      <h2>
+          Para cruzar este puente nos hemos encontrado con una señal que ponía que las maderas número 2, 4, 6, -, 10 y 12 están en mal estado. El problema es que el cuarto número está borrado... <br><br>
+          Ayúdanos a descubrir cúal podría ser. <br><br>
+          ¡Necesitamos de tus habilidades lógicas y matemáticas!
+      </h2>
+      <br>
+    </section>
+
+    <!-- Formulario de respuesta -->
+    <section class="reto-respuesta">
+      <h2>Respuesta</h2>
+      <form onsubmit="validarRespuesta(event)">
+        <input type="number" id="respuesta" required />
+        <button type="submit">Comprobar</button>
+      </form>
+      <p id="mensaje"></p>
+    </section>
+  </main>
+
+  <footer>
+      <p>&copy; Gisela Vinyals Estany, TIC. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

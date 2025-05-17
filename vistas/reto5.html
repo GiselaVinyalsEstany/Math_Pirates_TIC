@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./reto5_style.css">
+  <title>Reto Final: Formas Geométricas</title>
+  <script>
+    // Función para validar las respuestas y redirigir a la página adecuada
+    function validarRespuestas(event) {
+      event.preventDefault(); // Prevenir el envío del formulario para validarlo con JS
+
+      // Respuestas correctas
+      const correct_answers = [
+        6,                  // Respuesta correcta para la primera pregunta (hexágono)
+        'cuadrado',         // Respuesta correcta para la segunda pregunta (figura con lados y ángulos iguales)
+        'octágono'          // Respuesta correcta para la tercera pregunta (figura con 8 lados)
+      ];
+
+      // Obtener las respuestas del formulario
+      const respuesta1 = parseInt(document.querySelector('input[name="pregunta1"]').value);
+      const respuesta2 = document.querySelector('input[name="pregunta2"]').value.trim().toLowerCase();
+      const respuesta3 = document.querySelector('input[name="pregunta3"]').value.trim().toLowerCase();
+
+      // Comprobar si todas las respuestas son correctas
+      const todasCorrectas = (
+        respuesta1 === correct_answers[0] &&
+        respuesta2 === correct_answers[1] &&
+        respuesta3 === correct_answers[2]
+      );
+
+      // Redirigir según si las respuestas son correctas o no
+      if (todasCorrectas) {
+        window.location.href = './reto5_good.html';
+      } else {
+        window.location.href = './reto5_bad.html';
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+        <img src="../img/canva_design1.png" alt="Logo Aventuras Matemáticas" class="logo">
+        <a href="../index.html" class="home-button">🏠 Inicio</a>
+        <a href="../mapa.html" class="mapa-button"> MAPA </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="reto-enunciado">
+      <h1>Reto Final: Las Formas Mágicas</h1>
+      <br>
+      <p>Responde correctamente a todas las preguntas para ganar tu medalla de los <strong>Math Pirates</strong>.</p>
+      <form onsubmit="validarRespuestas(event)" class="form-final">
+        <label>1. ¿Cuántos lados tiene un hexágono?</label>
+        <input type="number" name="pregunta1" required>
+
+        <label>2. ¿Cuál de estas figuras tiene todos los lados y ángulos iguales?<br>(Escribe: cuadrado, rectángulo, triángulo...)</label>
+        <input type="text" name="pregunta2" required>
+
+        <label>3. ¿Cómo se llama una figura con 8 lados?</label>
+        <input type="text" name="pregunta3" required>
+
+        <button type="submit">¿SEGURO? COMPRUÉBALO</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Gisela Vinyals Estany, TIC. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

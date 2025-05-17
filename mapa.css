@@ -5,45 +5,12 @@
   box-sizing: border-box;
 }
 
-/* === BASE DEL LAYOUT === */
 html, body {
   width: 100%;
   height: 100%;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-}
-
-/* === FONDO MAPA OCUPANDO TODA LA PANTALLA === */
-main {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('./img/depositphotos_26763461-stock-illustration-map-of-treasure-island.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* === BOTONES DE RETO === */
-.boton-reto {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 2px solid #181717;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  z-index: 10;
-  transform: translate(-50%, -50%);
-}
-
-.boton-reto:hover {
-  background-color: rgba(255, 255, 255, 1);
-  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* === HEADER FIJO TRANSPARENTE === */
@@ -67,6 +34,39 @@ header.site-header {
   width: 75px;
 }
 
+/* === MAIN QUE AJUSTA LA ALTURA RESTANTE === */
+main {
+  flex: 1;
+  background-image: url('./img/depositphotos_26763461-stock-illustration-map-of-treasure-island.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;   /* Altura estimada del header */
+  padding-bottom: 80px; /* Altura estimada del footer */
+  z-index: 1;
+}
+
+/* === BOTONES DE RETO === */
+.boton-reto {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #181717;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+
+.boton-reto:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
 /* === BOTONES DEL HEADER === */
 .home-button,
 .mapa-button {
@@ -87,12 +87,11 @@ header.site-header {
   transform: scale(1.1);
 }
 
-/* === FOOTER STICKY === */
+/* === FOOTER PEGADO ABAJO === */
 footer {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   padding: 20px;
   text-align: center;
-  position: relative;
   z-index: 1;
 }

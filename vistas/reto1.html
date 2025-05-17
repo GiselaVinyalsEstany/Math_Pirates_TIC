@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./reto1_style.css" />
+  <title>Reto 1</title>
+  <script>
+    // Función para validar la respuesta
+    function validarRespuesta(event) {
+      // Prevenir que el formulario se envíe de forma predeterminada
+      event.preventDefault();
+
+      // Obtener los valores del formulario
+      const oro = parseInt(document.getElementById('oro').value);
+      const plata = parseInt(document.getElementById('plata').value);
+
+      // Totales correctos
+      const totalOroCorrecto = 32;  // Oro total en los 4 sacos
+      const totalPlataCorrecta = 45; // Plata total en los 4 sacos
+
+      // Validar la respuesta
+      if (oro === totalOroCorrecto && plata === totalPlataCorrecta) {
+        // Si las respuestas son correctas
+        document.getElementById('mensaje').innerText = '¡Respuesta correcta! 🎉';
+        document.getElementById('mensaje').style.color = 'green';
+      } else {
+        // Si las respuestas son incorrectas
+        document.getElementById('mensaje').innerText = 'Respuesta incorrecta, intenta de nuevo. ';
+        document.getElementById('mensaje').style.color = 'red';
+      }
+    }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-content">
+        <img src="../img/canva_design1.png" alt="Logo Aventuras Matemáticas" class="logo">
+        <a href="../index.html" class="home-button">🏠 Inicio</a>
+        <a href="../mapa.html" class="mapa-button"> MAPA </a>
+    </div>
+</header>
+
+<main>
+  <!-- Enunciado del reto -->
+  <section class="reto-enunciado">
+    <h2>
+    1. En el primer saco tenemos la <u>misma cantidad</u> de monedas de oro que de plata. 
+    En total, <strong>tenemos 26 monedas. </strong><br>
+    2. En el segundo tenemos el <u>doble</u>  de monedas de oro que de plata, aunque de oro solo hay <strong>4 monedas</strong>. <br>
+    3. El tercero... se rompió por el camino y no queda <strong>ninguna moneda dentro.</strong> <br>
+    4. Y en el cuarto hay la <u>mitad</u>  de monedas de oro que de plata, y en total, hemos contado <strong>30 de plata</strong>.
+    </h2>
+  </section>
+
+  <!-- Formulario de respuesta -->
+  <section class="reto-respuesta">
+    <h2>Respuesta</h2>
+    <form onsubmit="validarRespuesta(event)">
+      <label for="oro">🟡 Oro:</label>
+      <input type="number" id="oro" name="oro" required />
+
+      <label for="plata">⚪ Plata:</label>
+      <input type="number" id="plata" name="plata" required />
+
+      <button type="submit">Comprobar</button>
+    </form>
+
+    <!-- Mostrar mensaje de validación -->
+    <p id="mensaje"></p>
+  </section>
+</main>
+
+<footer>
+    <p>&copy; Gisela Vinyals Estany, TIC. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
