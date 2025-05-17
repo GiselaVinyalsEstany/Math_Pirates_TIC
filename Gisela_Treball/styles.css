@@ -1,0 +1,156 @@
+/* === RESET Y ESTILOS GENERALES === */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0 0 80px 0; /* padding-bottom para que el contenido no toque el footer */
+}
+
+main {
+    padding: 20px;
+}
+
+/* === NAVBAR FUERA DEL HEADER === */
+.navbar {
+    background-color: #4CAF50;
+    padding: 10px 0;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar img {
+    width: 80px; /* Tamaño más pequeño */
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #45a049;
+    transform: scale(1.1);
+}
+
+/* === SECCIÓN CON ANIMACIÓN Y TRANSICIONES === */
+.section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 900px; /* Hace las secciones más estrechas */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    opacity: 1;
+    transform: none;
+    justify-content: center;
+}
+
+.section p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* === ANIMACIÓN DE TRANSICIÓN DE TITULOS AL HACER SCROLL === */
+.section h1, .section h2 {
+    color: #4CAF50;
+    text-align: center;
+    opacity: 0;  /* Hacemos que los títulos empiecen invisibles */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+}
+
+.section.visible h1, .section.visible h2 {
+    opacity: 1; /* Cuando la sección es visible, mostramos el título */
+}
+
+/* === SECCIÓN MAPA - CENTRAR BOTÓN === */
+.section.mapa {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    flex-direction: column; /* Alinea los elementos de arriba hacia abajo */
+    padding: 20px;
+}
+
+.mapa-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: center; /* Asegura que el botón se centre */
+    text-align: center;
+}
+
+.mapa-button:hover {
+    background-color: #c8f7c5;
+    transform: scale(1.1);
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #4CAF50;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+}
+
+footer p {
+    color: #fff;
+}
+
+/* === EFECTOS DE HOVER PARA EL HEADER Y BOTONES === */
+.home-button, .mapa-button {
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-button:hover, .mapa-button:hover {
+    background-color: #c8f7c5;
+    transform: scale(1.1);
+}
+
+/* === SECCIÓN ÚLTIMA Y MÁRGENES PARA NO TOCAR EL FOOTER === */
+.section:last-of-type {
+    margin-bottom: 120px; /* Espacio adicional antes del footer */
+}
