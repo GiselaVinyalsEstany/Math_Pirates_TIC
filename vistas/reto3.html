@@ -7,28 +7,29 @@
   <link rel="shortcut icon" href="./img/canva_design1.png" type="image/x-icon">
   <title>Reto 3</title>
   <script>
-    // Función para validar la respuesta
-    function validarRespuesta(event) {
-      // Prevenir el envío del formulario por defecto
-      event.preventDefault();
+  // Función para validar la respuesta
+  function validarRespuesta(event) {
+    // Prevenir el envío del formulario por defecto
+    event.preventDefault();
 
-      // Obtener la respuesta del usuario
-      const respuesta = document.getElementById('respuesta').value.toLowerCase(); // Convertimos la respuesta a minúsculas
+    // Obtener la respuesta del usuario
+    const respuesta = document.getElementById('respuesta').value.trim().toLowerCase(); // Limpiar espacios y poner en minúsculas
 
-      // Respuesta correcta
-      const respuestaCorrecta = 'luna';
+    // Respuestas correctas
+    const respuestasCorrectas = ['fracción', 'una fracción'];
 
-      // Mostrar el mensaje correspondiente
-      const mensajeElement = document.getElementById('mensaje');
-      if (respuesta === respuestaCorrecta) {
-        mensajeElement.innerText = '¡Correcto! 🎉';
-        mensajeElement.style.color = 'green';
-      } else {
-        mensajeElement.innerText = '¡Intenta de nuevo! Revisa la adivinanza. ';
-        mensajeElement.style.color = 'red';
-      }
+    // Mostrar el mensaje correspondiente
+    const mensajeElement = document.getElementById('mensaje');
+    if (respuestasCorrectas.includes(respuesta)) {
+      mensajeElement.innerText = '¡Correcto! 🎉';
+      mensajeElement.style.color = 'green';
+    } else {
+      mensajeElement.innerText = '¡Intenta de nuevo! Revisa la adivinanza.';
+      mensajeElement.style.color = 'red';
     }
-  </script>
+  }
+</script>
+
 </head>
 <body>
   <header class="site-header">
@@ -47,11 +48,11 @@
       <br>
       <br>
       <h2>
-          Por el camino nos hemos encontrado una pirata que no nos dejaba pasar. Nos ha dicho que para poder seguir nuestro camino deberíamos resolver una adivinanza: <br> "Siempre subo, nunca bajo,
-          me ves brillar, pero no hablo.
-          A veces me ves llena,
-          a veces en pedazos.
-          ¿Quién soy?"
+        Me encuentras en una pizza,
+        en un pastel o en un bizcocho.
+        Cuanto más me dividas,
+        menos podrás ver lo que toco. <br>
+        ¿Qué soy?      
       </h2>
       <br>
       <br>
